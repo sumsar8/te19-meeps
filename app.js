@@ -6,6 +6,8 @@ var logger = require("morgan");
 const nunjucks = require("nunjucks");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var meepsRouter = require("./routes/meeps");
+
 
 var app = express();
 
@@ -22,5 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/meeps", meepsRouter);
 
 module.exports = app;
