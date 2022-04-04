@@ -1,6 +1,7 @@
 {% extends layout %}
 {% block  content %}
 
+<h1>{{username}}</h1>
 <form action="/meeps" method="post">
             <div class="input-group mb-3">
                 <label for="meeps" class="visually-hidden">Meep</label>
@@ -19,6 +20,7 @@
 
   <li class="list-group-item d-flex justify-content-between">
     {{meeps.body}}
+    {{meeps.username}}
     <a
 href="/meeps/{{meeps.id}}/delete"
 class="btn btn-sm btn-danger">

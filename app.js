@@ -7,7 +7,9 @@ const nunjucks = require("nunjucks");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var meepsRouter = require("./routes/meeps");
-
+var loginRouter = require("./routes/login");
+var registerRouter = require("./routes/register");
+var session = require('express-session')
 
 var app = express();
 
@@ -17,6 +19,13 @@ nunjucks.configure("views", {
 });
 // view engine setup
 
+app.use(session({
+  secret: 'dogmawater',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { sameSite: true}
+}));
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,5 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/meeps", meepsRouter);
+app.use("/login", loginRouter);
+app.use("/register", registerRouter);
 
 module.exports = app;

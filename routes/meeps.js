@@ -5,11 +5,12 @@ const pool = require("../database");
 router.get("/", async (req, res, next) => {
     await pool
         .promise()
-        .query("SELECT * FROM meeps")
+        .query("SELECT * FROM meeps JOIN users WHERE user_id = users.id")
         .then(([rows, fields]) => {
             res.render("meeps.njk", {
                 meeps: rows,
                 title: "Meeps",
+                username: req.session.username,
                 layout: "layout.njk"
             });
         })
@@ -22,6 +23,7 @@ router.get("/", async (req, res, next) => {
             });
         });
 });
+
 router.get("/:id/delete", async (req, res, next) => {
     const id = req.params.id;
     if (isNaN(req.params.id)) {
@@ -52,10 +54,11 @@ router.get("/:id/delete", async (req, res, next) => {
 });
 router.post("/", async (req, res, next) => {
     const meep = req.body.meep;
-
+    console.log(req.session.userid);
+    const userid = req.session.userid;
     await pool
         .promise()
-        .query("INSERT INTO meeps (body) VALUES (?)", [meep])
+        .query("INSERT INTO meeps (body, created_at,updated_at) VALUES (?,now(),now(),user_id)", [meep,userid])
         .then((response) => {
             console.log(response[0].affectedRows);
             if (response[0].affectedRows == 1) {

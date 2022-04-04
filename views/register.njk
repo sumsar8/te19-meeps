@@ -1,0 +1,25 @@
+{% extends layout %}
+{% block  content %}
+<form action="/register" method="post">
+            <div class="input-group mb-3">
+                <label for="register" class="visually-hidden">Meep</label>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                    required>
+                <input
+                    class="form-control"
+                    type="text"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                    required
+                >
+                <button class="btn btn-primary" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
