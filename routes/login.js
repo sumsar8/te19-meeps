@@ -5,7 +5,7 @@ const pool = require("../database");
 router.get("/", async (req, res, next) => {
     await pool
         .promise()
-        .query("SELECT * FROM meeps")
+        .query("SELECT * FROM rasobg_meeps")
         .then(() => {
             res.render("login.njk", {
                 title: "Login",
@@ -24,7 +24,7 @@ router.get("/", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
     await pool
         .promise()
-        .query("SELECT * FROM meeps")
+        .query("SELECT * FROM rasobg_meeps")
         .then(([rows, fields]) => {
             res.render("meeps.njk", {
                 meeps: rows,
@@ -46,7 +46,7 @@ router.post("/", async (req, res, next) => {
     const password = req.body.password;
     await pool
         .promise()
-        .query("SELECT * FROM users WHERE (username) = (?)", [username])
+        .query("SELECT * FROM rasobg_users WHERE (username) = (?)", [username])
         .then((response) => {
             if(response[0][0].password == password){
                 req.session.username = username;
