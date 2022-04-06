@@ -5,7 +5,7 @@ const pool = require("../database");
 router.get("/", async (req, res, next) => {
     await pool
         .promise()
-        .query("SELECT * FROM rasobg_meeps JOIN rasobg_users WHERE user_id = rasobg_meeps.id")
+        .query("SELECT * FROM rasobg_meeps JOIN rasobg_users WHERE user_id = rasobg_users.user_id")
         .then(([rows, fields]) => {
             res.render("meeps.njk", {
                 meeps: rows,
