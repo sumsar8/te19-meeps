@@ -27,7 +27,7 @@ router.post("/", async (req, res, next) => {
     console.log(username);
     await pool
         .promise()
-        .query("INSERT INTO users (username,password,created_at) VALUES (?,?,now())", [username, password])
+        .query("INSERT INTO rasobg_users (username,password,created_at) VALUES (?,?,now())", [username, password])
         .then((response) => {
             res.redirect("/login");
         })
