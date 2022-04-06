@@ -5,7 +5,7 @@ const pool = require("../database");
 router.get("/", async (req, res, next) => {
     await pool
         .promise()
-        .query("SELECT * FROM meeps JOIN users WHERE user_id = users.id")
+        .query("SELECT * FROM te19 JOIN rasobg_users WHERE user_id = users.id")
         .then(([rows, fields]) => {
             res.render("meeps.njk", {
                 meeps: rows,
@@ -35,7 +35,7 @@ router.get("/:id/delete", async (req, res, next) => {
     }
     await pool
         .promise()
-        .query("DELETE FROM meeps WHERE id = ?", [id])
+        .query("DELETE FROM rasobg_meeps WHERE id = ?", [id])
         .then((response) => {
             if (response[0].affectedRows === 1) {
                 res.redirect("/meeps");
@@ -58,7 +58,7 @@ router.post("/", async (req, res, next) => {
     const userid = req.session.userid;
     await pool
         .promise()
-        .query("INSERT INTO meeps (body, created_at,updated_at) VALUES (?,now(),now(),user_id)", [meep,userid])
+        .query("INSERT INTO rasobg_meeps (body, created_at,updated_at) VALUES (?,now(),now(),user_id)", [meep,userid])
         .then((response) => {
             console.log(response[0].affectedRows);
             if (response[0].affectedRows == 1) {
