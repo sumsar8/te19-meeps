@@ -1,4 +1,4 @@
-var createError = require("http-errors");
+require('dotenv').config();
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
@@ -10,7 +10,6 @@ var meepsRouter = require("./routes/meeps");
 var loginRouter = require("./routes/login");
 var registerRouter = require("./routes/register");
 var session = require('express-session')
-
 var app = express();
 
 nunjucks.configure("views", {
