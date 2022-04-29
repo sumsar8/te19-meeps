@@ -50,8 +50,7 @@ router.post("/", async (req, res, next) => {
         .then((response) => {
             if(response[0][0].password == password){
                 req.session.username = username;
-                //console.log("ASDASDASDASDSD " + response[0][0].id)
-                //req.session.userid = rows[0].id;
+                req.session.userid = response[0][0].user_id;
                 res.redirect("/meeps");
             }else{
                 res.json("Wrong Password")
