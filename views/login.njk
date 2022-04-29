@@ -1,5 +1,7 @@
 {% extends layout %}
 {% block  content %}
+<div class="item-container">
+  {% include "components/sidebar.njk" %}
 <form action="/login" method="post">
             <div class="input-group mb-3">
                 <label for="login" class="visually-hidden">Meep</label>
@@ -22,4 +24,5 @@
             </div>
         </form>
     </div>
+</div>
 {% endblock %}
