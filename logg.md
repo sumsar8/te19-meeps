@@ -21,3 +21,5 @@ Försökte fixa meeps
 Väldigt bra
 # Vad ska jag göra idag?
 Kryptera lösenord.
+# Vad ska jag göra nästa vecka?
+Figma design
