@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 const pool = require("../database");
+const bcrypt = require('bcrypt');
+
 router.get("/", async (req, res, next) => {
     await pool
         .promise()
@@ -20,14 +22,14 @@ router.get("/", async (req, res, next) => {
             });
         });
 });
-router.post("/", async (req, res, next) => {
+router.post("/",async (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
+    bcrypt.hash(password, 10, async function(err, hash) {
 
-    console.log(username);
     await pool
         .promise()
-        .query("INSERT INTO rasobg_users (username,password,created_at) VALUES (?,?,now())", [username, password])
+        .query("INSERT INTO rasobg_users (username,password,created_at) VALUES (?,?,now())", [username, hash])
         .then((response) => {
             res.redirect("/login");
         })
@@ -39,5 +41,7 @@ router.post("/", async (req, res, next) => {
                 }
             });
         });
+    });
 });
+
 module.exports = router;

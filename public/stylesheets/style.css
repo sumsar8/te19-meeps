@@ -9,3 +9,6 @@ a {
     display:flex;
     flex-direction:row;
 }
+.leftbar{
+    height:100px;
+}

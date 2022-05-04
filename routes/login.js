@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 const pool = require("../database");
+const bcrypt = require('bcrypt');
+
 
 router.get("/", async (req, res, next) => {
     await pool
@@ -48,20 +50,23 @@ router.post("/", async (req, res, next) => {
         .promise()
         .query("SELECT * FROM rasobg_users WHERE (username) = (?)", [username])
         .then((response) => {
-            if(response[0][0].password == password){
-                req.session.username = username;
-                req.session.userid = response[0][0].user_id;
-                res.redirect("/meeps");
-            }else{
-                res.json("Wrong Password")
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({
-                Login: {
-                    error: "Error logging in"
+            bcrypt.compare(password, response[0][0].password, function(err, result) {
+                if(result == true){
+                    req.session.username = username;
+                    req.session.userid = response[0][0].user_id;
+                    req.session.loggedin = true;
+                    res.redirect("/meeps");
+                }else{
+                    res.json("Wrong Password")
                 }
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json({
+                    Login: {
+                        error: "Error logging in"
+                    }
+                });
             });
         });
 });

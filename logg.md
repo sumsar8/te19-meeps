@@ -13,3 +13,11 @@ Försökte fixa meeps
 Dåligt
 # Vad ska jag göra idag?
 Fixa meeps.
+
+4/5/2022
+# Vad gjorde jag i onsdags?
+Försökte fixa meeps
+# Hur gick det?
+Väldigt bra
+# Vad ska jag göra idag?
+Kryptera lösenord.
