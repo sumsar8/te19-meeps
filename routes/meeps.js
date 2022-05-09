@@ -6,7 +6,7 @@ router.get("/", async (req, res, next) => {
     await pool
         .promise()
         .query("SELECT * FROM rasobg_meeps JOIN rasobg_users ON rasobg_meeps.user_id = rasobg_users.user_id")
-        .then(([rows, fields]) => {
+        .then(([rows]) => {
             if(req.session.loggedin == true){
                 res.render("meeps.njk", {
                     meeps: rows,

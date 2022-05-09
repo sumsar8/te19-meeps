@@ -8,6 +8,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var meepsRouter = require("./routes/meeps");
 var loginRouter = require("./routes/login");
+var profileRouter = require("./routes/profile");
 var registerRouter = require("./routes/register");
 var session = require('express-session')
 var app = express();
@@ -35,5 +36,7 @@ app.use("/users", usersRouter);
 app.use("/meeps", meepsRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
+app.use("/profile", profileRouter);
+
 
 module.exports = app;
