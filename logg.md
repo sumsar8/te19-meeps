@@ -23,3 +23,12 @@ Väldigt bra
 Kryptera lösenord.
 # Vad ska jag göra nästa vecka?
 Figma design
+4/5/2022
+# Vad gjorde jag i onsdags?
+Jag gjorde så att alla lösenord blir krypterade innan de blir sparade.
+# Hur gick det?
+Väldigt bra
+# Vad ska jag göra idag?
+Spara bildpath i databas
+# Vad ska jag göra nästa vecka?
+Samma sak.
