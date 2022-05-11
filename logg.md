@@ -22,4 +22,14 @@ Väldigt bra
 # Vad ska jag göra idag?
 Kryptera lösenord.
 # Vad ska jag göra nästa vecka?
-Figma design
+Fixa profilbild.
+
+11/5/2022
+# Vad gjorde jag i onsdags?
+Försökte kryptera lösenord.
+# Hur gick det?
+Väldigt bra, blev färdigt.
+# Vad ska jag göra idag?
+Fixa profilbild.
+# Vad ska jag göra nästa vecka?
+Fixa profilbild.

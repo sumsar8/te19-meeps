@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
             });
         });
 });
-router.post("/",async (req, res, next) => {
+router.post("/", async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     bcrypt.hash(password, 10, async function(err, hash) {
