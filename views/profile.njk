@@ -2,11 +2,16 @@
 {% block  content %}
 <div class="item-container">
   {% include "components/sidebar.njk" %}
-  <img src="/images/profiles/Profilepicture.png">
+      {% for users in users %}
+
+        <img src="{{ users.img }}" alt="profile picture" id="profilepicid">
+
+      {% endfor %}
   <form method="post" action="/profile">
     <input type="file" name="img" id="img">
     <input type="submit">
 </form>
 </form>
 </div>
+<script src="/javascripts/profile.js"></script>
 {% endblock %}

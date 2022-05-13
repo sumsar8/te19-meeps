@@ -15,7 +15,7 @@ Dåligt
 Fixa meeps.
 
 4/5/2022
-# Vad gjorde jag i onsdags?
+# Vad gjorde jag i fredags?
 Försökte fixa meeps
 # Hur gick det?
 Väldigt bra
@@ -25,7 +25,7 @@ Kryptera lösenord.
 Fixa profilbild.
 
 11/5/2022
-# Vad gjorde jag i onsdags?
+# Vad gjorde jag i måndags?
 Försökte kryptera lösenord.
 # Hur gick det?
 Väldigt bra, blev färdigt.
@@ -34,3 +34,12 @@ Fixa profilbild.
 # Vad ska jag göra nästa vecka?
 Fixa profilbild.
 
+13/5/2022
+# Vad gjorde jag i onsdags?
+Försökte fixa att användaren kunde spara en profilbild
+# Hur gick det?
+Användaren kan spara filnamnet till bilden för tillfället.
+# Vad ska jag göra idag?
+Göra så att bilden sparas och kan bli tagen till andra delar av sidan.
+# Vad ska jag göra nästa vecka?
+Visa bilden.
