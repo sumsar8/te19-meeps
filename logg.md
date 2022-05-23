@@ -43,3 +43,13 @@ Användaren kan spara filnamnet till bilden för tillfället.
 Göra så att bilden sparas och kan bli tagen till andra delar av sidan.
 # Vad ska jag göra nästa vecka?
 Visa bilden.
+
+18/5/2022
+# Vad gjorde jag i onsdags?
+Försökte få bilden att visas på profilbildssidan.
+# Hur gick det?
+bra
+# Vad ska jag göra idag?
+Göra så att bilden sparas och kan bli tagen till andra delar av sidan.
+# Vad ska jag göra nästa vecka?
+Samma sak

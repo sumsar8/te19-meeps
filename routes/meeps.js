@@ -1,3 +1,4 @@
+const { response } = require("express");
 var express = require("express");
 var router = express.Router();
 const pool = require("../database");
@@ -7,7 +8,7 @@ router.get("/", async (req, res, next) => {
         .promise()
         .query("SELECT * FROM rasobg_meeps JOIN rasobg_users ON rasobg_meeps.user_id = rasobg_users.user_id")
         .then(([rows]) => {
-            if(req.session.loggedin == true){
+            if (req.session.loggedin == true) {
                 res.render("meeps.njk", {
                     meeps: rows,
                     title: "Meeps",
@@ -59,7 +60,7 @@ router.post("/", async (req, res, next) => {
     const userid = req.session.userid;
     await pool
         .promise()
-        .query("INSERT INTO rasobg_meeps (body,created_at,updated_at,user_id) VALUES (?,now(),now(),?)", [meep,userid])
+        .query("INSERT INTO rasobg_meeps (body,created_at,updated_at,user_id) VALUES (?,now(),now(),?)", [meep, userid])
         .then((response) => {
             if (response[0].affectedRows == 1) {
                 res.redirect("/meeps");

@@ -1,17 +1,12 @@
 {% extends layout %}
 {% block  content %}
-<div class="item-container">
-  {% include "components/sidebar.njk" %}
-      {% for users in users %}
-
-        <img src="{{ users.img }}" alt="profile picture" id="profilepicid">
-
-      {% endfor %}
-  <form method="post" action="/profile">
-    <input type="file" name="img" id="img">
-    <input type="submit">
-</form>
-</form>
-</div>
-<script src="/javascripts/profile.js"></script>
-{% endblock %}
+    <div class="item-container">
+        {% include "components/sidebar.njk" %}
+        <img src="{{ img }}" alt="profile picture" id="profilepicid">
+            <form ref='uploadForm' id='uploadForm' action='/profile/upload' method='post' encType="multipart/form-data">
+                <input type="file" name="profilepic"/>
+                <input type='submit' value='Upload!'/>
+            </form>
+        </div>
+        <script src="/javascripts/profile.js"></script>
+    {% endblock %}
