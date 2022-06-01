@@ -59,17 +59,14 @@ router.post("/", async (req, res, next) => {
                 } else {
                     res.json("Wrong Password")
                 }
-
             })
-                .catch((err) => {
-                    console.log(err);
-                    response.status(500).json({
-                        Login: {
-                            error: "Error logging in"
-                        }
-                    });
-                });
-
+        }).catch((err) => {
+            console.log(err);
+            response.status(500).json({
+                Login: {
+                    error: "Error logging in"
+                }
+            });
         });
 
 });
