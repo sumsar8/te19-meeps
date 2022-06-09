@@ -18,7 +18,7 @@ Jag har lärt mig väldigt mycket om hur man får upp en dynamisk sida och hur m
 
 ## Negativa Erfarenheter
 
-Jag tyckte det var väldigt svårt med mysql kommandon som tex join vilket gjorde så att allt tog väldigt lång tid, inget fel på mysql men jag personligen tyckte det var väldigt svårt att förstå mig på.
+Jag tyckte det var väldigt svårt med mysql kommandon som tex join vilket gjorde så att allt tog väldigt lång tid, inget fel på mysql men jag personligen tyckte det var väldigt svårt att förstå mig på. Jag kan fixa det med att försöka läsa mer om deras dokumentation och hur allt fungerar.
 
 ## Sammanfattning
 
