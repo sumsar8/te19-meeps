@@ -1,33 +1,24 @@
 {% extends layout %}
 {% block  content %}
-<div class="item-container">
-  {% include "components/sidebar.njk" %}
-<h1>{{username}}</h1>
-<form action="/meeps" method="post">
-            <div class="input-group mb-3">
-                <label for="meeps" class="visually-hidden">Meep</label>
-                <input
-                    class="form-control"
-                    type="text"
-                    name="meep"
-                    id="meep"
-                    placeholder="Write a meep..."
-                    required>
-                <button class="btn btn-primary" type="submit">Add meep</button>
-            </div>
-        </form>
-    {% for meeps in meeps %}
-
-  <li class="list-group-item d-flex justify-content-between">
-    <img src="{{ "/images/profiles/" + meeps.imgpath}}" alt="Profile Picture">
-    {{meeps.body}}
-    {{meeps.username}}
-    <a
-href="/meeps/{{meeps.id}}/delete"
-class="btn btn-sm btn-danger">
-Delete meep
-</a>
-</li>
-</div>
-{% endfor %}
-{% endblock %}
+  <div class="item-container">
+    {% include "components/sidebar.njk" %}
+    <form action="/meeps" method="post">
+      <div class="input-group mb-3">
+        <label for="meeps" class="visually-hidden">Meep</label>
+        <input class="form-control" type="text" name="meep" id="meep" placeholder="Write a meep..." required>
+          <button class="btn btn-primary" type="submit">Add meep</button>
+        </div>
+      </form>
+      <h1>{{ username }}</h1>
+      {% for meeps in meeps %}
+        <li class="list-group-item d-flex justify-content-between">
+          <img src="{{ "/images/profiles/" + meeps.imgpath }}" alt="Profile Picture">
+            {{ meeps.body }}
+            {{ meeps.username }}
+            <a href="/meeps/{{ meeps.id }}/delete" class="btn btn-sm btn-danger">
+              Delete meep
+            </a>
+          </li>
+        </div>
+      {% endfor %}
+    {% endblock %}

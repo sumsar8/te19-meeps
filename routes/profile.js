@@ -61,9 +61,10 @@ router.post('/upload', async function (req, res) {
   let uploadPath;
   let userid = req.session.user_id;
   let path = req.files.profilepic.name;
+  let pathname = "/images/profiles/" + path;
   await pool
     .promise()
-    .query("UPDATE rasobg_users SET imgpath = ? WHERE user_id = ?", [path, userid])
+    .query("UPDATE rasobg_users SET imgpath = ? WHERE user_id = ?", [pathname, userid])
     .then((response) => {
       if (!req.files || Object.keys(req.files).length === 0) {
         return res.status(400).send('No files were uploaded.');
